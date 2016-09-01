@@ -194,3 +194,22 @@ It is vital that we get all the setup dealt with prior to the workshop so that
 we can focus on learning as much as possible with the limited time. Please feel
 free to [contact me](mailto:scrogson@gmail.com) directly if you have any trouble
 with getting anything setup.
+
+### Docker
+
+#### Database Setup
+
+To begin development, the database will need to be created.  Please be careful as this step drops the database.
+
+In `Dockerfile` and `docker-compose.yml`, make sure `MIX_ENV` set to `dev`.
+
+    docker-compose build
+    docker-compose run web sh -c "mix ecto.reset"
+
+#### Development
+
+Once your database is set up, you can start the app for development:
+
+    docker-compose up
+
+Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.  Yay!
