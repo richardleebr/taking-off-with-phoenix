@@ -1,0 +1,19 @@
+web:
+  build: .
+  volumes:
+    - .:/app
+  ports:
+    - "4000:4000"
+  links:
+    - db:db
+  environment:
+    - MIX_ENV=dev
+    - PSQL_USERNAME=postgres
+    - PSQL_PASSWORD=postgres
+    - PSQL_HOSTNAME=db
+    - PSQL_DBNAME=workshop_dev
+    - PSQL_PORT=5432
+db:
+  image: postgres:9.4.1
+  ports:
+    - "5432"
