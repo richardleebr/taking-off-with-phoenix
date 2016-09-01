@@ -1,5 +1,5 @@
 FROM trenpixster/elixir:1.3.1
-MAINTAINER BR Developers <development@bleacherreport.com>
+MAINTAINER Richard Lee
 
 RUN apt-get -y update && \
     curl -sL https://deb.nodesource.com/setup_6.x | bash - && \
